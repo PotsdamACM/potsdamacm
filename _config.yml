@@ -5,6 +5,14 @@ name: SUNY Potsdam ACM homepage
 include:
 - _pages
 
+collections:
+  blog:
+    permalink: /blog/:path/
+    output: true
+  guides:
+    permalink: /guides/:path/
+    output: true
+
 exclude:
 - README.md
 - LICENSE
