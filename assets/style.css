@@ -9,6 +9,7 @@
   --blue: hsla(242, 100%, 34%, 1);
   --green: hsla(100, 100%, 45%, 1);
   --officialred: hsl(0, 76%, 40%);
+  /* --officialred: hsl(0, 76%, 40%); */
   /* this red is brighter vvv */
   /* --officialred: rgba(220, 30, 30, 1); */
   --offwhitewarm: hsl(22, 60%, 99%);
@@ -133,6 +134,22 @@ header a:hover {
   align-items: center;
 }
 
+.summary-badge p {
+  font-size: .7em;
+  color:var(--black);
+}
+
+.summary-badge > p > .subtitle {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.summary-badge > p > .muted {
+  font-style: italic;
+  font-size: .7em;
+  width: 80%;
+}
+
 .textarea {
   width: 80%;
   /* border: 1px solid black; */
@@ -159,6 +176,8 @@ header a:hover {
   color: white;
   padding: 50px;
   background: hsla(50, 100%, 100%, 0.08);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 #welcomecard h2 {
@@ -184,17 +203,6 @@ header a:hover {
   margin: 10px 0 0 0;
 }
 
-#joinslack {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/assets/images/hackpotsdamlite_wide.jpg');
-  /* background-image: url('/assets/images/hackupstate.jpg'); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  padding: 0;
-  margin: 0;
-  border-radius: 0px;
-}
-
 #summary-cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -208,13 +216,13 @@ header a:hover {
 
 .summary-badge {
   /* background-color: hsl(0, 100%, 90%); */
-  width: 300px;
-  height: 200px;
+  width: 250px;
+  height: 150px;
   margin: auto;
   background-color: var(--yellow);
   border: 5px solid var(--yellow);
   border-radius: 3px;
-  box-shadow: 5px 5px;
+  box-shadow: 10px 10px;
   text-decoration: none;
   color: var(--black);
   display: grid;
@@ -222,15 +230,23 @@ header a:hover {
   align-items: center;
   text-align: center;
 }
+
 #summary-cards a:hover {
   position: relative;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   box-shadow: none;
 }
 
-.muted {
-  font-size: 20px;
+#joinslack {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/assets/images/hackpotsdamlite_wide.jpg');
+  /* background-image: url('/assets/images/hackupstate.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0px;
 }
 
 #slackcard {
@@ -421,7 +437,9 @@ footer {
   text-align: center;
   /* padding: 0 20px; */
   border: none;
-  background: hsla(360, 0.05%, 75%, 1);
+  /* background: hsla(360, 0.05%, 75%, 1); */
+  /* background: #711814; */
+  background: var(--officialred);
 }
 
 footer .icons {
@@ -432,11 +450,13 @@ footer .icons {
 footer .icons .fa {
   padding: 0 8px;
   font-size: 40px;
-  color: hsl(215, 100%, 0%);
+  /* color: hsl(215, 100%, 0%); */
+  color: white;
 }
 
 footer .icons .fa:hover {
-  color: white;
+  /* color: white; */
+  color: var(--blue);
   /* font-size: 36px; */
 }
 
