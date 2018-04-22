@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<article class="post">
+
+  <h1>{{ page.title }}</h1>
+
+  <div class="entry">
+    {{ content }}
+  </div>
+
+  <div class="date">
+    Written on {{ page.date | date: "%B %e, %Y" }} by {{ page.author }}
+  </div>
+
+</article>
+<div class="post-iterator">
+  {% if page.previous.url %}
+    <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title | truncatewords: 5 }}</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="next" href="{{page.next.url}}">{{page.next.title | truncatewords: 5 }} &raquo;</a>
+  {% endif %}
+</div>
