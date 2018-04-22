@@ -25,7 +25,8 @@ html {
     without increasing their size
   */
   box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
+  font-family: 'Play', sans-serif;
   color: var(--black);
   margin: 0;
   padding: 0;
@@ -50,7 +51,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   /* 116px hardcoded as headers max size. ... yup. */
-  grid-template-rows: 50px auto minmax(auto, 75px);
+  grid-template-rows: 50px auto 50px;
   grid-template-areas: "h" "c" "f";
 }
 
@@ -70,27 +71,20 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
   grid-area: h;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, 150px);
-  grid-template-rows: 1fr;
   border: none;
-  /* padding: 30px 20px 0 15px; */
   background: var(--officialreddarker);
-  /* background: var(--officialred); */
-  /* background: black; */
-  /* background: hsl(0, 0%, 4%); */
-  /* background: hsl(0, 76%, 20%); */
-  justify-content: center;
-  align-items: center;
   text-align: center;
   font-weight: 900;
   font-size: 20px;
   color: white;
-  padding: 10px 10px 5px;
+  padding: 18px 50px 15px;
 }
 
-.stickyheader {
+header .button {
+  padding: 0 8px;
+}
+
+/* .stickyheader {
   visibility: visible;
   position: fixed;
   width: 100vw;
@@ -99,10 +93,9 @@ header {
 
 .stickyheader-hide {
   visibility: hidden;
-}
+} */
 
 header .title {
-  grid-column: 1 / span 3;
   text-align: left;
   padding-bottom: 0;
 }
@@ -113,17 +106,31 @@ header a:visited {
     transition: color 0.2s ease;
     transition-duration: 0.2s;
     transition-property: color;
-    text-shadow: 2px 2px 1px #555;
+    text-shadow: 2px 2px 1px #333;
     color: hsl(25, 80%, 95%);
     text-decoration: none;
 }
 
-header a:hover {
+header > .menu > a:hover {
     color: orange;
     text-shadow: 0 0 0 #000;
     position: relative;
     top: 2px;
     left: 2px;
+}
+
+header a.title:hover {
+    color: hsl(25, 80%, 95%);
+    text-shadow: 0 0 0 #000;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+header a.title {
+  text-shadow: 2px 2px 1px #333;
+  color: hsl(25, 80%, 95%);
+  text-decoration: none;
 }
 
 /* CURRENTLY BROKEN */
@@ -253,13 +260,12 @@ header a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .summary-badge p {
   /* color:var(--black); */
   color: hsl(0, 0%, 98%);
-  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -268,8 +274,9 @@ header a:hover {
   font-weight: bold;
 }
 
-.summary-badge > p > .muted {
+.summary-badge > p > span > .muted {
   letter-spacing: normal;
+  max-width: 75%;
 }
 
 #joinslack {
@@ -485,7 +492,7 @@ footer .icons {
 
 footer .icons .fa {
   padding: 0 12px;
-  font-size: 40px;
+  font-size: 32px;
   /* color: hsl(215, 100%, 0%); */
   color: white;
 }

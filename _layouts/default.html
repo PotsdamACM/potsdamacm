@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="/assets/main.js"></script>
   <script src="/assets/jquery-3.3.1.min.js"></script>
@@ -13,17 +14,27 @@
 
 <body>
   <header>
+    <a href="/" class="title" style="float: left;">SUNY Potsdam ACM</a>
+    <div class="menu" style="float: right;">
+      <a href="/about" class="button">About</a>
+      <a href="/acmw" class="button">ACM-W</a>
+      <a href="/join" class="button" class="button">Join</a>
+      <a href="/org" class="button">Eboard</a>
+      <a href="/donate" class="button">Donate</a>
+      <a href="/blog" class="button">Blog</a>
+      <a href="/guides" class="button">Guides</a>
+    </div>
+  </header>
+  <!-- <header>
     <a href="/" class="title" style="color:white;">SUNY Potsdam ACM</a>
-    <!-- UNFINISHED. update the classes, then make the changes to the css... -->
     <a href="/about" style="grid-column: -8;">About</a>
     <a href="/acmw" style="grid-column: -7;">ACM-W</a>
     <a href="/join" style="grid-column: -6;">Join</a>
     <a href="/org" style="grid-column: -5;">Eboard</a>
-    <!-- <a href="/blog" style="grid-column: -3;">Blog</a> -->
     <a href="/donate" style="grid-column: -4;">Donate</a>
     <a href="/blog" style="grid-column: -3;">Blog</a>
     <a href="/guides" style="grid-column: -2;">Guides</a>
-  </header>
+  </header> -->
 
   <div id="content">
     {{ content }}
