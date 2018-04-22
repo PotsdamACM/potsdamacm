@@ -5,6 +5,15 @@ name: SUNY Potsdam ACM homepage
 include:
 - _pages
 
+pages_list:
+  About: '/mission'
+  Join: '/join'
+  ACM-W: '/acmw'
+  Eboard: '/org'
+  Blog: '/blog'
+  Guides: '/guides'
+  Donate: '/donate'
+
 collections:
   blog:
     permalink: /blog/:path/

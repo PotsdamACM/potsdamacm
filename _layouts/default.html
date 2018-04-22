@@ -16,13 +16,9 @@
   <header>
     <a href="/" class="title" style="float: left;">SUNY Potsdam ACM</a>
     <div class="menu" style="float: right;">
-      <a href="/about" class="button">About</a>
-      <a href="/acmw" class="button">ACM-W</a>
-      <a href="/join" class="button" class="button">Join</a>
-      <a href="/org" class="button">Eboard</a>
-      <a href="/donate" class="button">Donate</a>
-      <a href="/blog" class="button">Blog</a>
-      <a href="/guides" class="button">Guides</a>
+      {% for page in site.pages_list %}
+      <a href="{{ page[1]  }}" class="button">{{ page[0] }}</a>
+      {% endfor %}
     </div>
   </header>
   <!-- <header>
