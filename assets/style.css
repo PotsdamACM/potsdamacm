@@ -9,11 +9,14 @@
   --blue: hsla(242, 100%, 34%, 1);
   --green: hsla(100, 100%, 45%, 1);
   --officialred: hsl(0, 76%, 40%);
+  --officialreddarker: hsl(0, 76%, 30%);
   /* --officialred: hsl(0, 76%, 40%); */
   /* this red is brighter vvv */
   /* --officialred: rgba(220, 30, 30, 1); */
   --offwhitewarm: hsl(22, 60%, 99%);
   --lightblue: hsl(200, 67%, 55%);
+  /* --summary-badge-color: hsla(0, 0%, 100%, 0.9); */
+  --summary-badge-color: var(--officialreddarker);
 }
 
 html {
@@ -47,8 +50,16 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   /* 116px hardcoded as headers max size. ... yup. */
-  grid-template-rows: minmax(auto, 100px) auto minmax(auto, 75px);
+  grid-template-rows: 50px auto minmax(auto, 75px);
   grid-template-areas: "h" "c" "f";
+}
+
+.show-top-row {
+  grid-template-rows: 50px auto minmax(auto, 75px);
+}
+
+.hide-top-row {
+  grid-template-rows: 0px auto minmax(auto, 75px);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,18 +71,34 @@ h1, h2, h3, h4, h5, h6 {
 header {
   grid-area: h;
   display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 150px);
   grid-template-rows: 1fr;
   border: none;
-  padding: 30px 20px 0 15px;
-  background: var(--officialred);
+  /* padding: 30px 20px 0 15px; */
+  background: var(--officialreddarker);
+  /* background: var(--officialred); */
+  /* background: black; */
+  /* background: hsl(0, 0%, 4%); */
+  /* background: hsl(0, 76%, 20%); */
   justify-content: center;
   align-items: center;
   text-align: center;
   font-weight: 900;
-  font-size: 32px;
+  font-size: 20px;
   color: white;
+  padding: 10px 10px 5px;
+}
+
+.stickyheader {
+  visibility: visible;
+  position: fixed;
+  width: 100vw;
+  padding: 30px 20px 0 15px;
+}
+
+.stickyheader-hide {
+  visibility: hidden;
 }
 
 header .title {
@@ -92,15 +119,16 @@ header a:visited {
 }
 
 header a:hover {
-    color: var(--blue);
+    color: orange;
     text-shadow: 0 0 0 #000;
     position: relative;
     top: 2px;
     left: 2px;
 }
 
+/* CURRENTLY BROKEN */
 .current-page {
-  color: var(--blue) !important;
+  color: var(--officialred) !important;
   text-shadow: none;
   position: relative;
   top: 2px;
@@ -117,6 +145,7 @@ header a:hover {
   align-items: center;
   text-align: center;
   font-size: 28px;
+  padding-bottom: 50px;
 }
 
 /* grid with 1 column */
@@ -134,22 +163,6 @@ header a:hover {
   align-items: center;
 }
 
-.summary-badge p {
-  font-size: .7em;
-  color:var(--black);
-}
-
-.summary-badge > p > .subtitle {
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.summary-badge > p > .muted {
-  font-style: italic;
-  font-size: .7em;
-  width: 80%;
-}
-
 .textarea {
   width: 80%;
   /* border: 1px solid black; */
@@ -163,7 +176,8 @@ header a:hover {
 
 /* home home home home home home home home home home home home */
 #bender_welcome {
-  background-image: url('/assets/images/bender_dark.png');
+  background-image: url('/assets/images/bender_dark_blurred.png');
+  /* background-image: url('/assets/images/bender_dark.png'); */
   background-attachment: fixed;
   background-size: cover;
   background-position: left;
@@ -178,6 +192,10 @@ header a:hover {
   background: hsla(50, 100%, 100%, 0.08);
   max-width: 600px;
   margin: 0 auto;
+  /* margin-top: calc(100vh/2 - 70px - 120px);
+  margin-bottom: calc(100vh/2 - 120px); */
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #welcomecard h2 {
@@ -207,28 +225,10 @@ header a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   text-align: center;
-  /* background-color: var(--yellow); */
-  background-color: inherit;
   padding: 20px;
-  grid-gap: 50px;
+  grid-gap: 40px;
   margin: auto;
-}
-
-.summary-badge {
-  /* background-color: hsl(0, 100%, 90%); */
-  width: 250px;
-  height: 150px;
-  margin: auto;
-  background-color: var(--yellow);
-  border: 5px solid var(--yellow);
-  border-radius: 3px;
-  box-shadow: 10px 10px;
-  text-decoration: none;
-  color: var(--black);
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  margin-bottom: 50px;
 }
 
 #summary-cards a:hover {
@@ -236,6 +236,40 @@ header a:hover {
   top: 10px;
   left: 10px;
   box-shadow: none;
+}
+
+.summary-badge {
+  width: 250px;
+  height: 150px;
+  margin: auto;
+  /* color: var(--black); */
+  color: white;
+  background-color: var(--summary-badge-color);
+  border: 5px solid inherit;
+  border-radius: 3px;
+  box-shadow: 10px 10px hsla(0, 0%, 0%, 0.4);
+  text-decoration: none;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+}
+
+.summary-badge p {
+  /* color:var(--black); */
+  color: hsl(0, 0%, 98%);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.summary-badge > p > .subtitle {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.summary-badge > p > .muted {
+  letter-spacing: normal;
 }
 
 #joinslack {
@@ -252,13 +286,15 @@ header a:hover {
 #slackcard {
   color: white;
   /* background: hsla(50, 100%, 100%, 0.08); */
+  font-size: 16px;
+  letter-spacing: normal;
 }
 
-#slackcard h2,
+#slackcard h1,
 #slackcard p {
   color: white;
   padding: 0px;
-  background: hsla(0, 0%, 0%, 0.05);
+  /* background: hsla(0, 0%, 0%, 0.05); */
   color: white;
   margin: 10px 0 0 0;
   text-shadow:
@@ -266,7 +302,7 @@ header a:hover {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     -1px -1px 0 #000;
-    background: hsla(50, 100%, 0%, 0.3);
+  /* background: hsla(50, 100%, 0%, 0.3); */
 }
 
 #slackcard h2 {
@@ -439,7 +475,7 @@ footer {
   border: none;
   /* background: hsla(360, 0.05%, 75%, 1); */
   /* background: #711814; */
-  background: var(--officialred);
+  background: var(--officialreddarker);
 }
 
 footer .icons {
@@ -448,7 +484,7 @@ footer .icons {
 }
 
 footer .icons .fa {
-  padding: 0 8px;
+  padding: 0 12px;
   font-size: 40px;
   /* color: hsl(215, 100%, 0%); */
   color: white;
@@ -456,11 +492,6 @@ footer .icons .fa {
 
 footer .icons .fa:hover {
   /* color: white; */
-  color: var(--blue);
+  color: orange;
   /* font-size: 36px; */
-}
-
-footer .meetings {
-  font-size: 12px;
-  text-align: left;
 }
