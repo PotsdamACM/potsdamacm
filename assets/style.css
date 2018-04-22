@@ -468,6 +468,20 @@ header a.title {
   min-height: 500px;
 } */
 
+/* DONATE DONATE DONATE DONATE DONATE DONATE DONATE DONATE */
+.donations {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+.donations .supporter-card {
+  border: 1px solid black;
+}
+
 /* ========== FOOTER ============ */
 
 footer {
