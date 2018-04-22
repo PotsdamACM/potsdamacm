@@ -203,7 +203,8 @@ header a.title {
   /* margin-top: calc(100vh/2 - 70px - 120px);
   margin-bottom: calc(100vh/2 - 120px); */
   margin-top: 50px;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+  margin-bottom: 200px;
 }
 
 #welcomecard h2 {
@@ -280,7 +281,35 @@ header a.title {
   max-width: 75%;
 }
 
-#joinslack {
+#slackplug {
+  background-color: var(--black);
+}
+
+#slackplug a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#slackplug a,
+#slackplug a:visited {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+  transition-duration: 0.2s;
+  transition-property: color;
+}
+
+#slackplug a:hover {
+  color: orange;
+}
+
+#slackplug p {
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+#hpl17splash {
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/assets/images/hackpotsdamlite_wide.jpg');
   /* background-image: url('/assets/images/hackupstate.jpg'); */
   background-size: cover;
@@ -289,37 +318,6 @@ header a.title {
   padding: 0;
   margin: 0;
   border-radius: 0px;
-}
-
-#slackcard {
-  color: white;
-  /* background: hsla(50, 100%, 100%, 0.08); */
-  font-size: 16px;
-  letter-spacing: normal;
-}
-
-#slackcard h1,
-#slackcard p {
-  color: white;
-  padding: 0px;
-  /* background: hsla(0, 0%, 0%, 0.05); */
-  color: white;
-  margin: 10px 0 0 0;
-  text-shadow:
-    1px 1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    -1px -1px 0 #000;
-  /* background: hsla(50, 100%, 0%, 0.3); */
-}
-
-#slackcard h2 {
-  text-shadow:
-    2px 2px 0 #000,
-    2px -2px 0 #000,
-    -2px 2px 0 #000,
-    -2px -2px 0 #000;
-    background: none;
 }
 
 /* org org org org org org org org org org org org org org org */
@@ -484,7 +482,7 @@ header a.title {
 }
 
 .post-listing .title a {
-  float: left;
+  /* float: left; */
   text-decoration: none;
   color: inherit;
 }
@@ -496,6 +494,12 @@ header a.title {
 
 .post-listing p {
   margin: 0;
+}
+
+.post-listing .entry {
+  font-style: italic;
+  color: hsl(0, 0%, 40%);
+  font-size: .6em;
 }
 
 .post {
