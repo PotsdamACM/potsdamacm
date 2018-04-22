@@ -6,7 +6,7 @@ include:
 - _pages
 
 pages_list:
-  About: '/mission'
+  About: '/about'
   Join: '/join'
   ACM-W: '/acmw'
   Eboard: '/org'
